@@ -41,11 +41,11 @@ public class SecurityConfig {
 		.requestMatchers("/user")
 		.hasRole("USER")
 		.requestMatchers("/")
-		.permitAll()
+		.authenticated()
 		.anyRequest()
 		.authenticated()
 		.and()
-		.formLogin();
+		.formLogin().loginPage("/signin").loginProcessingUrl("/loginurl").defaultSuccessUrl("/").permitAll();
 		return httpSecurity.build();
 	}
 }

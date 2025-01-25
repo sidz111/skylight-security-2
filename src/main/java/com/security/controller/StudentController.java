@@ -20,4 +20,9 @@ public class StudentController {
 	public String adminpage() {
 		return "admin";
 	}
+	
+	@GetMapping("/signin")
+	public String loginPage() {
+		return "signin";
+	}
 }
