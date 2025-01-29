@@ -1,18 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8" />
-<title>Login Page</title>
+    <meta charset="UTF-8" />
+    <title>Login Page</title>
 </head>
 <body>
-	<h1>Welcome to Login Page</h1>
-
-	<form action="/loginurl" method="post">
-		<input type="email" name="username" id="username" placeholder="Enter Email" required />
-		<input type="password" name="password" id="password"
-			placeholder="Enter Password" required/>
-		<button type="submit">Login</button>
-		
-	</form>
+    <h1>Welcome to Login Page</h1>
+    
+    <!-- Display error message if the "error" parameter is present -->
+   <!-- <th:block th:if="${param.error}">
+   <h3>Username and Password not Matched</h3>
+   </th:block> -->
+    
+    <form action="/login" method="post">
+        <input type="email" name="username" id="username" placeholder="Enter Email"/>
+        <input type="password" name="password" id="password" placeholder="Enter Password"/>
+        <button type="submit">Login</button>
+    </form>
 </body>
 </html>

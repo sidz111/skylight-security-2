@@ -25,4 +25,9 @@ public class StudentController {
 	public String loginPage() {
 		return "signin";
 	}
+	
+	@GetMapping("/invalid")
+	public String getInvalidPage() {
+		return "error-page";
+	}
 }
