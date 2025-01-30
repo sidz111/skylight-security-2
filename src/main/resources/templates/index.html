@@ -1,11 +1,44 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8" />
-	<title>Index Page</title>
+<meta charset="UTF-8" />
+<title>Index Page</title>
 </head>
 <body>
 	<h1>Index Page</h1>
+	<h2 th:text="${student}"></h2>
 	<a href="/logout">LogOut</a>
+
+	<form action="/add-student" method="post">
+
+		<input type="email" name="email" placeholder="Enter Email" /> <input
+			type="password" name="password" placeholder="Enter Password" /> <input
+			type="text" name="name" placeholder="Enter Name" />
+		<!-- <input type="text" name="role" placeholder="Enter Role in Capital" /> -->
+
+		<button type="submit">Add Student</button>
+	</form>
+
+	<table border="1">
+		<thead>
+			<tr>
+				<td>Id</td>
+				<td>Email</td>
+				<td>Password</td>
+				<td>Name</td>
+				<td>Role</td>
+			</tr>
+		</thead>
+		<tbody>
+		<tr th:each="s : ${students}">
+			<td th:text="${s.id}"></td>
+			<td th:text="${s.email}"></td>
+			<td th:text="${s.password}"></td>
+			<td th:text="${s.name}"></td>
+			<td th:text="${s.role}"></td>
+		</tr>
+		</tbody>
+	</table>
+
 </body>
 </html>

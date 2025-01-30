@@ -60,4 +60,10 @@ public class Student {
 		this.role = role;
 	}
 
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + ", role=" + role
+				+ "]";
+	}
+
 }
